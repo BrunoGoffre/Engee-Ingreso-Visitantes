@@ -1,0 +1,81 @@
+<div class="container">
+    <div class="row">
+        <h2>Datos de la visita</h2>
+    </div>
+    <div class="line"></div>
+    <form [formGroup]="visitante" (ngSubmit)="Submit()">
+        <div class="row">
+            <div class="col-4">
+                <label>
+                    <strong>DNI</strong>
+                </label>
+                <input type="text" placeholder="Ingrese DNI" formControlName="dni">
+            </div>
+            <div class="col-2">
+                <button type="button" class="btn-consultar btn btn-primary" (click)="Consultar()">Consultar</button>
+            </div>
+            <div class="col-6">
+                <label>
+                    <strong>Nombre y apellido</strong>
+                </label>
+                <input type="text" [ngModel]="nombreCompleto" placeholder="Ingrese nombre completo"
+                    formControlName="nombreCompleto">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <label>
+                    <strong>Nro. de tarjerta de ingreso</strong>
+                    <input type="text" placeholder="Ingrese numero" formControlName="numeroTajertaIngreso">
+                </label>
+            </div>
+            <div class="col-4">
+                <label>
+                    <strong>Fecha de ingreso</strong>
+                    <input type="date" placeholder="Confirm your password" formControlName="fechaIngreso">
+                </label>
+            </div>
+            <div class="col-4">
+                <label>
+                    <strong>Hora de ingreso</strong>
+                    <input type="time" placeholder="Confirm your password" formControlName="HoraIngreso">
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div>
+                    <strong class="selector">sector</strong>
+                    <select (change)="CambiarSector($event)" formControlName="sector">
+                        <option *ngFor="let sector of sectores" value="{{sector}}">
+                            {{ sector }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <!-- <div class="invalid-feedback" *ngIf="isSubmitted && sector?.invalid">
+        <sup>*</sup>Porfavor seleccione un sector
+    </div> -->
+            <div class="col-6">
+                <div>
+                    <strong class="selector">Visita a:</strong>
+                    <select (change)="CambiarVisita($event)" formControlName="visitaA">
+                        <option *ngFor="let visita of visitaAFiltrado"
+                            value="{{visita['nombre'] + ' ' + visita['apellido']}}">
+                            {{ visita['nombre']}} {{visita['apellido']}}
+                        </option>
+                    </select>
+                </div>
+                <!-- <div class="invalid-feedback" *ngIf="isSubmitted && sector?.invalid">
+                    <sup>*</sup>Porfavor seleccione un sector
+                </div> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <button type="submit" class="btn-ingresar btn btn-primary">Ingresar</button>
+            </div>
+        </div>
+    </form>
+</div>
+<app-grilla></app-grilla>

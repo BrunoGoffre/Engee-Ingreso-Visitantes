@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="cabecera row">
+        <div class="col-3">
+            #
+        </div>
+        <div class="col-3">
+            Fecha
+        </div>
+        <div class="col-3">
+            Hora de ingreso
+        </div>
+        <div class="col-3">
+            Visitó a
+        </div>
+    </div>
+    <div class="items">
+        <div class="row item" *ngFor="let item of ListaVisitantes" (click)="BorrarVisitante(item)">
+            <div class="col-3">
+                {{item.id}}
+            </div>
+            <div class="col-3">
+                {{item.fechaIngreso}}
+            </div>
+            <div class="col-3">
+                {{item.HoraIngreso}}
+            </div>
+            <div class="col-3">
+                {{item.visitaA}}
+            </div>
+        </div>
+    </div>
+</div>

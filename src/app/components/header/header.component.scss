@@ -1,0 +1,31 @@
+.navbar {
+    height: 100px;
+
+}
+
+.logo {
+    height: 100px;
+}
+
+a {
+    color: black;
+}
+
+.top-Line {
+    border-top: 10px solid rgba(255, 251, 0, 0.562);
+    opacity: 0.95;
+    height: 0px;
+    max-width: 100%;
+    padding: 0;
+    bottom: 0;
+}
+
+.bottom-Line {
+    border-top: 0.5px solid grey;
+    height: 0px;
+    max-width: 100%;
+    padding: 0;
+    top: 0;
+    opacity: 0.3;
+    margin-bottom: 4%;
+}
