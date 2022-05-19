@@ -35,12 +35,17 @@ export class GrillaComponent implements OnInit {
   }
 
   BorrarVisitante(item: Visitante) {
+    let x = 1;
     if (confirm("Desea eliminar este visitante? ")) {
 
       this.ListaVisitantes.forEach(visitante => {
         if (visitante.id == item.id) {
-          this.ListaVisitantes.splice(this.ListaVisitantes.indexOf(visitante), 1)
+          this.ListaVisitantes.splice(this.ListaVisitantes.indexOf(visitante), 1);
         }
+      })
+      this.ListaVisitantes.forEach(visitante => {
+        visitante.id = x;
+        x++;
       })
     }
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { Visitante } from 'src/app/models/visitante';
 import { GrillaComponent } from 'src/app/components/grilla/grilla.component';
@@ -42,8 +42,8 @@ export class HomeComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private renaper: RenaperService) {
     this.visitante = this.fb.group({
-      // dni: ["", [Validators.required]],
-      dni: new FormControl(""),
+      dni: ["", Validators.required],
+      //dni: new FormControl(""),
       nombreCompleto: new FormControl(""),
       numeroTajertaIngreso: new FormControl(""),
       fechaIngreso: new FormControl(""),
